@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Buana Gold Shop - Layanan jual beli emas, perak, berlian dan batu permata.">
+  <title>Buana Gold Shop | Gold & Jewelry</title>
+
+  <style>
+    :root {
+      --gold: #b49458;
+      --dark: #25221e;
+      --cream: #faf7f0;
+      --white: #ffffff;
+      --muted: #77716a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--dark);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .announcement {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    header {
+      background: white;
+      padding: 24px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #eee9df;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: var(--gold);
+    }
+
+    .logo small {
+      display: block;
+      font: 10px Arial, sans-serif;
+      letter-spacing: 3px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #f5eee1, #fffdf8);
+      text-align: center;
+      padding: 110px 20px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: normal;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      margin: 20px 0;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: white;
+      padding: 13px 26px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: .5px;
+      border-radius: 3px;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      background: #96743e;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+
+    .btn-outline:hover {
+      color: white;
+    }
+
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      margin: 10px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .product {
+      background: var(--cream);
+      padding-bottom: 24px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .product img {
+      display: block;
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+    }
+
+    .product h3 {
+      font-size: 22px;
+      margin: 20px 10px 6px;
+    }
+
+    .product p {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 0 14px;
+    }
+
+    .product .btn {
+      margin-top: 10px;
+    }
+
+    .notice {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 25px;
+    }
+
+    .services {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .services p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .about {
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    .contact {
+      background: #f4eee3;
+      text-align: center;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: #e7dfd1;
+      padding: 35px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #d9ba7c;
+    }
+
+    .floating-wa {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: #25d366;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 13px;
+      box-shadow: 0 5px 20px #0002;
+      z-index: 10;
+    }
+
+    @media (max-width: 950px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .hero {
+        padding: 80px 20px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product img {
+        height: 320px;
+      }
+
+      .section-heading h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announcement">
+    BUANA GOLD SHOP • GOLD • SILVER • DIAMOND • GEMSTONES
+  </div>
+
+  <header>
+    <a class="logo" href="#home">
+      BUANA
+      <small>GOLD SHOP</small>
+    </a>
+
+    <nav aria-label="Navigasi utama">
+      <a href="#home">Beranda</a>
+      <a href="#koleksi">Koleksi</a>
+      <a href="#layanan">Jual Perhiasan</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <div class="eyebrow">Welcome to Buana Gold Shop</div>
+      <h1>Timeless Beauty,<br>Precious Elegance.</h1>
+      <p>
+        Jelajahi pilihan perhiasan emas, perak,
+        berlian, dan batu permata bersama Buana Gold Shop.
+      </p>
+      <a class="btn" href="#koleksi">JELAJAHI KOLEKSI</a>
+    </div>
+
+    <section id="koleksi">
+      <div class="section-heading">
+        <div class="eyebrow">Our Collection</div>
+        <h2>Koleksi Perhiasan</h2>
+        <p>Temukan kategori perhiasan yang Anda minati.</p>
+      </div>
+
+      <div class="products">
+
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+               alt="Contoh perhiasan emas" loading="lazy">
+          <h3>Perhiasan Emas</h3>
+          <p>Koleksi perhiasan emas pilihan.</p>
+          <a class="btn" target="_blank" rel="noopener noreferrer"
+             href="https://wa.me/6287741854591?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20bertanya%20harga%20perhiasan%20emas.">
+             TANYA HARGA
+          </a>
+        </article>
+
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+               alt="Contoh perhiasan perak" loading="lazy">
+          <h3>Perhiasan Perak</h3>
+          <p>Pilihan perhiasan perak untuk berbagai gaya.</p>
+          <a class="btn" target="_blank" rel="noopener noreferrer"
+             href="https://wa.me/6287741854591?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20bertanya%20harga%20perhiasan%20perak.">
+             TANYA HARGA
+          </a>
+        </article>
+
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+               alt="Contoh perhiasan berlian" loading="lazy">
+          <h3>Perhiasan Berlian</h3>
+          <p>Perhiasan berlian dengan sentuhan elegan.</p>
+          <a class="btn" target="_blank" rel="noopener noreferrer"
+             href="https://wa.me/6287741854591?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20bertanya%20harga%20perhiasan%20berlian.">
+             TANYA HARGA
+          </a>
+        </article>
+
+        <article class="product">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+               alt="Contoh perhiasan batu permata" loading="lazy">
+          <h3>Batu Permata</h3>
+          <p>Beragam batu permata dan perhiasan batu pilihan.</p>
+          <a class="btn" target="_blank" rel="noopener noreferrer"
+             href="https://wa.me/6287741854591?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20bertanya%20tentang%20batu%20permata.">
+             TANYA HARGA
+          </a>
+        </article>
+
+      </div>
+
+      <p class="notice">
+        * Foto merupakan ilustrasi sementara, bukan foto stok asli.
+        Ketersediaan, spesifikasi, dan harga dikonfirmasi melalui WhatsApp.
+      </p>
+    </section>
+
+    <section class="services" id="layanan">
+      <div class="eyebrow">Sell Your Jewelry</div>
+      <h2>Ingin Menjual Perhiasan Anda?</h2>
+      <p>
+        Buana Gold Shop menerima pertanyaan dan penawaran
+        penjualan emas, perak, berlian, serta batu permata.
+        Hubungi kami untuk informasi lebih lanjut.
+      </p>
+      <a class="btn" target="_blank" rel="noopener noreferrer"
+         href="https://wa.me/6287741854591?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20menawarkan%20perhiasan%20untuk%20dijual.">
+         TAWARKAN PERHIASAN VIA WHATSAPP
+      </a>
+    </section>
+
+    <section class="about" id="tentang">
+      <div class="eyebrow">About Us</div>
+      <h2>Tentang Buana Gold Shop</h2>
+      <p>
+        Buana Gold Shop merupakan usaha yang menawarkan
+        layanan jual beli perhiasan emas, perak, berlian,
+        dan batu permata. Kami menyediakan komunikasi langsung
+        untuk membantu pelanggan memperoleh informasi produk
+        dan layanan sesuai kebutuhan.
+      </p>
+    </section>
+
+    <section class="contact" id="kontak">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Hubungi Kami</h2>
+      <p>
+        Tanyakan harga, ketersediaan produk, atau layanan
+        jual beli perhiasan melalui kontak resmi kami.
+      </p>
+
+      <div class="contact-buttons">
+        <a class="btn" target="_blank" rel="noopener noreferrer"
+           href="https://wa.me/6287741854591">
+          WHATSAPP
+        </a>
+
+        <a class="btn btn-outline" target="_blank" rel="noopener noreferrer"
+           href="https://www.instagram.com/buanagoldshop/">
+          INSTAGRAM
+        </a>
+      </div>
+
+      <p>WhatsApp: 087741854591</p>
+      <p>Instagram: @buanagoldshop</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>BUANA GOLD SHOP</p>
+    <p>Gold • Silver • Diamond • Gemstones</p>
+    <p>
+      <a href="https://www.instagram.com/buanagoldshop/"
+         target="_blank" rel="noopener noreferrer">
+        Instagram
+      </a>
+      &nbsp; | &nbsp;
+      <a href="https://wa.me/6287741854591"
+         target="_blank" rel="noopener noreferrer">
+        WhatsApp
+      </a>
+    </p>
+    <p>&copy; 2026 Buana Gold Shop. All Rights Reserved.</p>
+  </footer>
+
+  <a class="floating-wa"
+     href="https://wa.me/6287741854591"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Chat Buana Gold Shop melalui WhatsApp">
+    Chat WhatsApp
+  </a>
+
+</body>
+</html>
