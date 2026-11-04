@@ -2,472 +2,151 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Buana Gold Shop - Layanan jual beli emas, perak, berlian dan batu permata.">
-  <title>Buana Gold Shop | Gold & Jewelry</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Buana Gold Shop melayani konsultasi jual beli perhiasan emas, perak, berlian, dan batu permata. Lihat dokumentasi perhiasan yang kami terima.">
+  <meta name="theme-color" content="#fbf8f2">
+  <title>Buana Gold Shop | Jewelry & Precious Moments</title>
   <style>
-    :root {
-      --gold: #b49458;
-      --dark: #25221e;
-      --cream: #faf7f0;
-      --white: #ffffff;
-      --muted: #77716a;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--white);
-      color: var(--dark);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .announcement {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 9px 15px;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    header {
-      background: white;
-      padding: 24px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #eee9df;
-    }
-
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 25px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: var(--gold);
-    }
-
-    .logo small {
-      display: block;
-      font: 10px Arial, sans-serif;
-      letter-spacing: 3px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    nav {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      font-size: 13px;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    .hero {
-      background: linear-gradient(120deg, #f5eee1, #fffdf8);
-      text-align: center;
-      padding: 110px 20px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    h1, h2, h3 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-weight: normal;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      margin: 20px 0;
-      line-height: 1.15;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: var(--muted);
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: white;
-      padding: 13px 26px;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: .5px;
-      border-radius: 3px;
-      transition: .2s;
-    }
-
-    .btn:hover {
-      background: #96743e;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-    }
-
-    .btn-outline:hover {
-      color: white;
-    }
-
-    section {
-      padding: 75px 7%;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-heading h2 {
-      font-size: 38px;
-      margin: 10px 0;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .product {
-      background: var(--cream);
-      padding-bottom: 24px;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .product img {
-      display: block;
-      width: 100%;
-      height: 270px;
-      object-fit: cover;
-    }
-
-    .product h3 {
-      font-size: 22px;
-      margin: 20px 10px 6px;
-    }
-
-    .product p {
-      font-size: 13px;
-      color: var(--muted);
-      padding: 0 14px;
-    }
-
-    .product .btn {
-      margin-top: 10px;
-    }
-
-    .notice {
-      text-align: center;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 25px;
-    }
-
-    .services {
-      background: var(--cream);
-      text-align: center;
-    }
-
-    .services p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      color: var(--muted);
-    }
-
-    .about {
-      text-align: center;
-    }
-
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      color: var(--muted);
-    }
-
-    .contact {
-      background: #f4eee3;
-      text-align: center;
-    }
-
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    footer {
-      background: var(--dark);
-      color: #e7dfd1;
-      padding: 35px 20px;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    footer a {
-      color: #d9ba7c;
-    }
-
-    .floating-wa {
-      position: fixed;
-      bottom: 22px;
-      right: 22px;
-      background: #25d366;
-      color: white;
-      padding: 13px 18px;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 13px;
-      box-shadow: 0 5px 20px #0002;
-      z-index: 10;
-    }
-
-    @media (max-width: 950px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        justify-content: center;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 14px;
-      }
-
-      .hero {
-        padding: 80px 20px;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      .product img {
-        height: 320px;
-      }
-
-      .section-heading h2 {
-        font-size: 30px;
-      }
-    }
+    :root { --gold:#b49458; --gold-deep:#8d6b37; --ink:#29241e; --muted:#756f67; --cream:#faf7f0; --soft:#f3ede3; --line:#eae2d6; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:90px; }
+    body { margin:0; color:var(--ink); background:var(--white); font:15px/1.7 Arial,Helvetica,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    img { max-width:100%; display:block; }
+    .container { width:min(1160px, 90%); margin-inline:auto; }
+    .announcement { padding:8px 12px; text-align:center; color:#fff; background:var(--ink); font-size:10px; letter-spacing:2.4px; }
+    .site-header { position:sticky; top:0; z-index:30; background:rgba(255,255,255,.95); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+    .header-inner { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .logo { font:700 26px/1 Georgia,serif; color:var(--gold); letter-spacing:3px; text-align:center; white-space:nowrap; }
+    .logo small { display:block; margin-top:8px; font:9px Arial,sans-serif; color:var(--muted); letter-spacing:4px; }
+    nav { display:flex; flex-wrap:wrap; gap:clamp(12px,2.3vw,30px); }
+    nav a { font-size:12px; transition:color .25s; }
+    nav a:hover, nav a:focus-visible { color:var(--gold-deep); }
+    .hero { background:linear-gradient(130deg,#f7f1e7 0%,#fffdf9 65%,#f8f3ea 100%); overflow:hidden; }
+    .hero-inner { display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(30px,6vw,90px); align-items:center; padding-block:68px; }
+    .eyebrow { display:block; color:var(--gold-deep); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:3.4px; }
+    h1,h2,h3 { font-family:Georgia,'Times New Roman',serif; font-weight:400; }
+    h1 { font-size:clamp(43px,5.4vw,75px); line-height:1.12; letter-spacing:-1.7px; margin:18px 0 22px; }
+    h2 { font-size:clamp(30px,3.6vw,46px); line-height:1.22; margin:12px 0 15px; }
+    h3 { font-size:22px; margin:0 0 10px; }
+    .hero-copy p, .section-heading p, .service-copy p, .about-copy p, .contact-copy p { color:var(--muted); }
+    .hero-copy p { max-width:480px; margin:0 0 27px; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:45px; padding:12px 21px; border:1px solid var(--gold); background:var(--gold); color:#fff; border-radius:3px; font-size:11px; font-weight:700; letter-spacing:1px; text-align:center; transition:background .25s, color .25s, transform .25s, box-shadow .25s; }
+    .btn:hover { background:var(--gold-deep); border-color:var(--gold-deep); transform:translateY(-2px); box-shadow:0 8px 18px #49300b20; }
+    .btn-outline { background:transparent; color:var(--gold-deep); }
+    .btn-outline:hover { color:#fff; }
+    .hero-media { position:relative; max-width:480px; width:100%; margin-inline:auto; }
+    .hero-media:before { content:""; position:absolute; inset:24px -18px -18px 24px; border:1px solid #d6c29d; border-radius:180px 180px 8px 8px; }
+    .hero-photo { position:relative; width:100%; height:440px; object-fit:cover; border-radius:180px 180px 8px 8px; box-shadow:0 16px 50px #3d2e181c; }
+    .hero-caption { position:absolute; bottom:20px; left:-20px; background:#fffefa; padding:13px 20px; border-left:3px solid var(--gold); box-shadow:0 10px 25px #34291a20; font-size:11px; letter-spacing:1px; }
+    section { padding-block:68px; }
+    .section-heading { max-width:680px; text-align:center; margin:0 auto 32px; }
+    .section-heading p { margin:0; }
+    .intro-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .feature { padding:26px 24px; background:var(--cream); border:1px solid var(--line); text-align:center; }
+    .feature-num { display:block; color:var(--gold); font:24px Georgia,serif; margin-bottom:8px; }
+    .feature h3 { font-size:19px; }
+    .feature p { color:var(--muted); font-size:13px; margin:0; }
+    .gallery-section { background:#fff; padding-top:48px; }
+    .gallery { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:15px; }
+    .photo-card { position:relative; overflow:hidden; padding:0; border:0; background:var(--cream); cursor:pointer; text-align:left; border-radius:4px; }
+    .photo-card img { width:100%; height:250px; object-fit:cover; transition:transform .55s ease,filter .4s; }
+    .photo-card:hover img, .photo-card:focus-visible img { transform:scale(1.065); filter:brightness(.93); }
+    .photo-card:after { content:'Lihat foto  +'; position:absolute; bottom:0; left:0; right:0; padding:26px 15px 12px; background:linear-gradient(transparent,#0008); color:white; font-size:11px; letter-spacing:1px; opacity:0; transition:opacity .25s; }
+    .photo-card:hover:after, .photo-card:focus-visible:after { opacity:1; }
+    .gallery-note { margin:23px auto 0; max-width:800px; text-align:center; color:var(--muted); font-size:12px; }
+    .services { background:var(--cream); }
+    .service-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(30px,6vw,85px); align-items:center; }
+    .service-image { width:100%; height:355px; object-fit:cover; border-radius:3px; box-shadow:16px 16px 0 #e9dfcd; }
+    .service-copy p { margin:0 0 23px; }
+    .mini-points { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 26px; }
+    .mini-points span { font-size:11px; padding:7px 12px; background:#fff; border:1px solid var(--line); color:var(--gold-deep); }
+    .about { background:#fff; }
+    .about-copy { max-width:760px; margin:auto; text-align:center; }
+    .about-copy p { margin-bottom:0; }
+    .contact { background:var(--soft); }
+    .contact-copy { max-width:760px; text-align:center; margin:auto; }
+    .contact-copy p { margin:0 0 24px; }
+    .contact-details { margin-top:20px; font-size:12px; color:var(--muted); }
+    .contact-details span { display:inline-block; margin:0 10px; }
+    footer { padding:30px 15px; background:var(--ink); color:#e9e0d4; text-align:center; font-size:12px; }
+    footer p { margin:7px 0; }
+    footer a { color:#dfc18d; }
+    .floating-wa { position:fixed; bottom:20px; right:20px; z-index:35; padding:12px 17px; border-radius:40px; background:#25d366; color:white; font-size:12px; font-weight:700; box-shadow:0 5px 22px #0003; transition:transform .25s; }
+    .floating-wa:hover { transform:translateY(-3px); }
+    .lightbox { position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; padding:45px 18px; background:#16120feb; }
+    .lightbox.open { display:flex; }
+    .lightbox img { max-height:86vh; max-width:min(100%,980px); object-fit:contain; box-shadow:0 15px 55px #0007; }
+    .lightbox-close { position:absolute; top:12px; right:18px; background:none; border:0; color:white; font-size:36px; cursor:pointer; }
+    .lightbox-count { position:absolute; bottom:12px; color:#eee; font-size:12px; }
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @media(max-width:900px) { .hero-inner { grid-template-columns:1fr 1fr; gap:28px; } .hero-photo { height:370px; } .gallery { grid-template-columns:repeat(3,1fr); } .photo-card img { height:230px; } .service-image { height:310px; } }
+    @media(max-width:650px) { .header-inner { justify-content:center; padding-block:16px; } nav { justify-content:center; gap:12px 16px; } nav a { font-size:11px; } .hero-inner { grid-template-columns:1fr; padding-block:45px; } .hero-copy { text-align:center; } .hero-copy p { margin-inline:auto; } .actions { justify-content:center; } .hero-media { max-width:340px; } .hero-photo { height:340px; } .hero-caption { left:-8px; font-size:10px; } section { padding-block:48px; } .intro-grid { grid-template-columns:1fr; gap:10px; } .feature { padding:18px; } .gallery-section { padding-top:35px; } .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; } .photo-card img { height:195px; } .service-grid { grid-template-columns:1fr; } .service-image { height:280px; box-shadow:10px 10px 0 #e9dfcd; } .service-copy { text-align:center; } .mini-points { justify-content:center; } .contact-details span { margin:4px 8px; } .floating-wa { right:12px; bottom:12px; padding:10px 13px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*:before,*:after { animation:none!important; transition:none!important; } .reveal { opacity:1; transform:none; } }
   </style>
 </head>
-
 <body>
-
-  <div class="announcement">
-    BUANA GOLD SHOP • GOLD • SILVER • DIAMOND • GEMSTONES
-  </div>
-
-  <header>
-    <a class="logo" href="#home">
-      BUANA
-      <small>GOLD SHOP</small>
-    </a>
-
-    <nav aria-label="Navigasi utama">
-      <a href="#home">Beranda</a>
-      <a href="#koleksi">Koleksi</a>
-      <a href="#layanan">Jual Perhiasan</a>
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-  </header>
-
+  <div class="announcement">BUANA GOLD SHOP · GOLD · SILVER · DIAMOND · GEMSTONES</div>
+  <header class="site-header"><div class="container header-inner">
+    <a class="logo" href="#home" aria-label="Buana Gold Shop, kembali ke beranda">BUANA<small>GOLD SHOP</small></a>
+    <nav aria-label="Navigasi utama"><a href="#home">Beranda</a><a href="#jenis">Layanan</a><a href="#dokumentasi">Dokumentasi</a><a href="#layanan">Jual Perhiasan</a><a href="#tentang">Tentang</a><a href="#kontak">Kontak</a></nav>
+  </div></header>
   <main>
-    <div class="hero" id="home">
-      <div class="eyebrow">Welcome to Buana Gold Shop</div>
-      <h1>Timeless Beauty,<br>Precious Elegance.</h1>
-      <p>
-        Jelajahi pilihan perhiasan emas, perak,
-        berlian, dan batu permata bersama Buana Gold Shop.
-      </p>
-      <a class="btn" href="#koleksi">JELAJAHI KOLEKSI</a>
-    </div>
-
-    <section id="koleksi">
-      <div class="section-heading">
-        <div class="eyebrow">Our Collection</div>
-        <h2>Koleksi Perhiasan</h2>
-        <p>Temukan kategori perhiasan yang Anda minati.</p>
+    <div class="hero" id="home"><div class="container hero-inner">
+      <div class="hero-copy reveal"><span class="eyebrow">Welcome to Buana Gold Shop</span><h1>Timeless Beauty,<br>Precious Elegance.</h1><p>Setiap perhiasan memiliki cerita dan nilainya sendiri. Buana Gold Shop melayani konsultasi jual beli perhiasan dengan komunikasi yang mudah dan personal.</p><div class="actions"><a class="btn" href="#dokumentasi">LIHAT DOKUMENTASI</a><a class="btn btn-outline" href="#layanan">JUAL PERHIASAN</a></div></div>
+      <div class="hero-media reveal"><img class="hero-photo" src="assets/images/perhiasan_01.jpg" alt="Dokumentasi perhiasan yang diperiksa di Buana Gold Shop" fetchpriority="high"><div class="hero-caption">DOKUMENTASI PERHIASAN · BUANA GOLD SHOP</div></div>
+    </div></div>
+    <section id="jenis"><div class="container"><div class="section-heading reveal"><span class="eyebrow">What We Welcome</span><h2>Beragam Perhiasan, Beragam Cerita</h2><p>Konsultasikan perhiasan yang ingin Anda tawarkan kepada kami. Setiap penawaran dapat dibicarakan langsung melalui WhatsApp.</p></div>
+      <div class="intro-grid"><div class="feature reveal"><span class="feature-num">01</span><h3>Emas & Perak</h3><p>Berbagai bentuk perhiasan, termasuk cincin, gelang, kalung, dan model lainnya.</p></div><div class="feature reveal"><span class="feature-num">02</span><h3>Berlian & Batu Permata</h3><p>Konsultasi mengenai perhiasan dengan batu hias atau batu permata.</p></div><div class="feature reveal"><span class="feature-num">03</span><h3>Konsultasi Langsung</h3><p>Hubungi kami untuk membicarakan jenis, kondisi, dan informasi perhiasan Anda.</p></div></div>
+    </div></section>
+    <section class="gallery-section" id="dokumentasi"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Our Documentation</span><h2>Dokumentasi Perhiasan</h2><p>Beberapa foto asli perhiasan sebagai gambaran beragam model yang dapat dikonsultasikan kepada Buana Gold Shop.</p></div>
+      <div class="gallery" id="gallery">
+        <button class="photo-card reveal" type="button" data-index="0" aria-label="Perbesar dokumentasi perhiasan 1"><img src="assets/images/perhiasan_02.jpg" alt="Dokumentasi perhiasan 1" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="1" aria-label="Perbesar dokumentasi perhiasan 2"><img src="assets/images/perhiasan_03.jpg" alt="Dokumentasi perhiasan 2" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="2" aria-label="Perbesar dokumentasi perhiasan 3"><img src="assets/images/perhiasan_04.jpg" alt="Dokumentasi perhiasan 3" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="3" aria-label="Perbesar dokumentasi perhiasan 4"><img src="assets/images/perhiasan_05.jpg" alt="Dokumentasi perhiasan 4" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="4" aria-label="Perbesar dokumentasi perhiasan 5"><img src="assets/images/perhiasan_06.jpg" alt="Dokumentasi perhiasan 5" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="5" aria-label="Perbesar dokumentasi perhiasan 6"><img src="assets/images/perhiasan_07.jpg" alt="Dokumentasi perhiasan 6" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="6" aria-label="Perbesar dokumentasi perhiasan 7"><img src="assets/images/perhiasan_08.jpg" alt="Dokumentasi perhiasan 7" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="7" aria-label="Perbesar dokumentasi perhiasan 8"><img src="assets/images/perhiasan_09.jpg" alt="Dokumentasi perhiasan 8" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="8" aria-label="Perbesar dokumentasi perhiasan 9"><img src="assets/images/perhiasan_10.jpg" alt="Dokumentasi perhiasan 9" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="9" aria-label="Perbesar dokumentasi perhiasan 10"><img src="assets/images/perhiasan_11.jpg" alt="Dokumentasi perhiasan 10" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="10" aria-label="Perbesar dokumentasi perhiasan 11"><img src="assets/images/perhiasan_12.jpg" alt="Dokumentasi perhiasan 11" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="11" aria-label="Perbesar dokumentasi perhiasan 12"><img src="assets/images/perhiasan_13.jpg" alt="Dokumentasi perhiasan 12" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="12" aria-label="Perbesar dokumentasi perhiasan 13"><img src="assets/images/perhiasan_14.jpg" alt="Dokumentasi perhiasan 13" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="13" aria-label="Perbesar dokumentasi perhiasan 14"><img src="assets/images/perhiasan_15.jpg" alt="Dokumentasi perhiasan 14" loading="lazy"></button>
       </div>
-
-      <div class="products">
-
-        <article class="product">
-          <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-               alt="Contoh perhiasan emas" loading="lazy">
-          <h3>Perhiasan Emas</h3>
-          <p>Koleksi perhiasan emas pilihan.</p>
-          <a class="btn" target="_blank" rel="noopener noreferrer"
-             href="https://wa.me/6287741854591?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20bertanya%20harga%20perhiasan%20emas.">
-             TANYA HARGA
-          </a>
-        </article>
-
-        <article class="product">
-          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-               alt="Contoh perhiasan perak" loading="lazy">
-          <h3>Perhiasan Perak</h3>
-          <p>Pilihan perhiasan perak untuk berbagai gaya.</p>
-          <a class="btn" target="_blank" rel="noopener noreferrer"
-             href="https://wa.me/6287741854591?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20bertanya%20harga%20perhiasan%20perak.">
-             TANYA HARGA
-          </a>
-        </article>
-
-        <article class="product">
-          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-               alt="Contoh perhiasan berlian" loading="lazy">
-          <h3>Perhiasan Berlian</h3>
-          <p>Perhiasan berlian dengan sentuhan elegan.</p>
-          <a class="btn" target="_blank" rel="noopener noreferrer"
-             href="https://wa.me/6287741854691?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20bertanya%20harga%20perhiasan%20berlian.">
-             TANYA HARGA
-          </a>
-        </article>
-
-        <article class="product">
-          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-               alt="Contoh perhiasan batu permata" loading="lazy">
-          <h3>Batu Permata</h3>
-          <p>Beragam batu permata dan perhiasan batu pilihan.</p>
-          <a class="btn" target="_blank" rel="noopener noreferrer"
-             href="https://wa.me/6287741854691?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20bertanya%20tentang%20batu%20permata.">
-             TANYA HARGA
-          </a>
-        </article>
-
-      </div>
-
-      <p class="notice">
-        * Foto merupakan ilustrasi sementara, bukan foto stok asli.
-        Ketersediaan, spesifikasi, dan harga dikonfirmasi melalui WhatsApp.
-      </p>
-    </section>
-
-    <section class="services" id="layanan">
-      <div class="eyebrow">Sell Your Jewelry</div>
-      <h2>Ingin Menjual Perhiasan Anda?</h2>
-      <p>
-        Buana Gold Shop menerima pertanyaan dan penawaran
-        penjualan emas, perak, berlian, serta batu permata.
-        Hubungi kami untuk informasi lebih lanjut.
-      </p>
-      <a class="btn" target="_blank" rel="noopener noreferrer"
-         href="https://wa.me/6287741854691?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20menawarkan%20perhiasan%20untuk%20dijual.">
-         TAWARKAN PERHIASAN VIA WHATSAPP
-      </a>
-    </section>
-
-    <section class="about" id="tentang">
-      <div class="eyebrow">About Us</div>
-      <h2>Tentang Buana Gold Shop</h2>
-      <p>
-        Buana Gold Shop merupakan usaha yang menawarkan
-        layanan jual beli perhiasan emas, perak, berlian,
-        dan batu permata. Kami menyediakan komunikasi langsung
-        untuk membantu pelanggan memperoleh informasi produk
-        dan layanan sesuai kebutuhan.
-      </p>
-    </section>
-
-    <section class="contact" id="kontak">
-      <div class="eyebrow">Get In Touch</div>
-      <h2>Hubungi Kami</h2>
-      <p>
-        Tanyakan harga, ketersediaan produk, atau layanan
-        jual beli perhiasan melalui kontak resmi kami.
-      </p>
-
-      <div class="contact-buttons">
-        <a class="btn" target="_blank" rel="noopener noreferrer"
-           href="https://wa.me/6287741854691">
-          WHATSAPP
-        </a>
-
-        <a class="btn btn-outline" target="_blank" rel="noopener noreferrer"
-           href="https://www.instagram.com/buanagoldshop/">
-          INSTAGRAM
-        </a>
-      </div>
-
-      <p>WhatsApp: 087741854691</p>
-      <p>Instagram: @buanagoldshop</p>
-    </section>
+      <p class="gallery-note">Foto-foto di atas merupakan dokumentasi, bukan katalog stok yang tersedia untuk dijual. Katalog produk penjualan akan ditampilkan secara terpisah. Jenis dan kondisi perhiasan dapat dikonsultasikan langsung.</p>
+    </div></section>
+    <section class="services" id="layanan"><div class="container service-grid"><img class="service-image reveal" src="assets/images/perhiasan_01.jpg" alt="Foto perhiasan di atas timbangan sebagai dokumentasi pemeriksaan" loading="lazy"><div class="service-copy reveal"><span class="eyebrow">Sell Your Jewelry</span><h2>Ingin Menjual Perhiasan Anda?</h2><p>Punya perhiasan lama atau model yang sudah tidak digunakan? Buana Gold Shop menerima pertanyaan dan penawaran penjualan berbagai model perhiasan. Kirimkan informasi dan foto perhiasan Anda untuk konsultasi awal.</p><div class="mini-points"><span>Perhiasan Lama</span><span>Beragam Model</span><span>Konsultasi via WhatsApp</span></div><a class="btn" href="https://wa.me/6287741854691?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20menawarkan%20perhiasan%20untuk%20dijual." target="_blank" rel="noopener noreferrer">TAWARKAN PERHIASAN</a></div></div></section>
+    <section class="about" id="tentang"><div class="container about-copy reveal"><span class="eyebrow">About Us</span><h2>Tentang Buana Gold Shop</h2><p>Buana Gold Shop menyediakan layanan komunikasi dan konsultasi jual beli perhiasan emas, perak, berlian, serta batu permata. Kami ingin menghadirkan pengalaman yang sederhana, nyaman, dan personal bagi setiap pelanggan. Informasi produk yang dijual akan tersedia melalui katalog terpisah.</p></div></section>
+    <section class="contact" id="kontak"><div class="container contact-copy reveal"><span class="eyebrow">Get In Touch</span><h2>Mari Terhubung</h2><p>Ingin bertanya tentang layanan, menawarkan perhiasan, atau mengetahui informasi lebih lanjut? Hubungi kontak resmi Buana Gold Shop.</p><div class="actions"><a class="btn" href="https://wa.me/6287741854691" target="_blank" rel="noopener noreferrer">WHATSAPP</a><a class="btn btn-outline" href="https://www.instagram.com/buanagoldshop/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></div><div class="contact-details"><span>WhatsApp: 087741854691</span><span>Instagram: @buanagoldshop</span></div></div></section>
   </main>
-
-  <footer>
-    <p>BUANA GOLD SHOP</p>
-    <p>Gold • Silver • Diamond • Gemstones</p>
-    <p>
-      <a href="https://www.instagram.com/buanagoldshop/"
-         target="_blank" rel="noopener noreferrer">
-        Instagram
-      </a>
-      &nbsp; | &nbsp;
-      <a href="https://wa.me/6287741854691"
-         target="_blank" rel="noopener noreferrer">
-        WhatsApp
-      </a>
-    </p>
-    <p>&copy; 2026 Buana Gold Shop. All Rights Reserved.</p>
-  </footer>
-
-  <a class="floating-wa"
-     href="https://wa.me/6287741854691"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Chat Buana Gold Shop melalui WhatsApp">
-    Chat WhatsApp
-  </a>
-
+  <footer><p>BUANA GOLD SHOP</p><p>Gold · Silver · Diamond · Gemstones</p><p><a href="https://www.instagram.com/buanagoldshop/" target="_blank" rel="noopener noreferrer">Instagram</a> &nbsp;·&nbsp; <a href="https://wa.me/6287741854691" target="_blank" rel="noopener noreferrer">WhatsApp</a></p><p>&copy; 2026 Buana Gold Shop. All Rights Reserved.</p></footer>
+  <a class="floating-wa" href="https://wa.me/6287741854691" target="_blank" rel="noopener noreferrer" aria-label="Chat Buana Gold Shop melalui WhatsApp">Chat WhatsApp</a>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto dokumentasi diperbesar" tabindex="-1"><button class="lightbox-close" id="lightboxClose" type="button" aria-label="Tutup foto">&times;</button><img id="lightboxImage" alt="Dokumentasi perhiasan diperbesar"><span class="lightbox-count" id="lightboxCount"></span></div>
+  <script>
+    (function () {
+      var elements = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) { entries.forEach(function(entry) { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold:0.08 });
+        elements.forEach(function(el) { observer.observe(el); });
+      } else { elements.forEach(function(el) { el.classList.add('visible'); }); }
+      var cards = Array.from(document.querySelectorAll('.photo-card'));
+      var lightbox = document.getElementById('lightbox');
+      var large = document.getElementById('lightboxImage');
+      var count = document.getElementById('lightboxCount');
+      var closeButton = document.getElementById('lightboxClose');
+      var lastFocus = null;
+      function closeLightbox() { lightbox.classList.remove('open'); document.body.style.overflow=''; if(lastFocus) lastFocus.focus(); }
+      cards.forEach(function(card, i) { card.addEventListener('click',function() { lastFocus=card; var img=card.querySelector('img'); large.src=img.src; large.alt=img.alt; count.textContent=(i+1)+' / '+cards.length; lightbox.classList.add('open'); document.body.style.overflow='hidden'; closeButton.focus(); }); });
+      closeButton.addEventListener('click',closeLightbox);
+      lightbox.addEventListener('click',function(e) { if(e.target===lightbox) closeLightbox(); });
+      document.addEventListener('keydown',function(e) { if(!lightbox.classList.contains('open')) return; if(e.key==='Escape') closeLightbox(); if(e.key==='Tab') { e.preventDefault(); closeButton.focus(); } });
+    })();
+  </script>
 </body>
 </html>
