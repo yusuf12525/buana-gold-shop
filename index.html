@@ -40,7 +40,6 @@
     .hero-media { position:relative; max-width:480px; width:100%; margin-inline:auto; }
     .hero-media:before { content:""; position:absolute; inset:24px -18px -18px 24px; border:1px solid #d6c29d; border-radius:180px 180px 8px 8px; }
     .hero-photo { position:relative; width:100%; height:440px; object-fit:cover; border-radius:180px 180px 8px 8px; box-shadow:0 16px 50px #3d2e181c; }
-    .hero-caption { position:absolute; bottom:20px; left:-20px; background:#fffefa; padding:13px 20px; border-left:3px solid var(--gold); box-shadow:0 10px 25px #34291a20; font-size:11px; letter-spacing:1px; }
     section { padding-block:68px; }
     .section-heading { max-width:680px; text-align:center; margin:0 auto 32px; }
     .section-heading p { margin:0; }
@@ -86,6 +85,32 @@
     @media(max-width:900px) { .hero-inner { grid-template-columns:1fr 1fr; gap:28px; } .hero-photo { height:370px; } .gallery { grid-template-columns:repeat(3,1fr); } .photo-card img { height:230px; } .service-image { height:310px; } }
     @media(max-width:650px) { .header-inner { justify-content:center; padding-block:16px; } nav { justify-content:center; gap:12px 16px; } nav a { font-size:11px; } .hero-inner { grid-template-columns:1fr; padding-block:45px; } .hero-copy { text-align:center; } .hero-copy p { margin-inline:auto; } .actions { justify-content:center; } .hero-media { max-width:340px; } .hero-photo { height:340px; } .hero-caption { left:-8px; font-size:10px; } section { padding-block:48px; } .intro-grid { grid-template-columns:1fr; gap:10px; } .feature { padding:18px; } .gallery-section { padding-top:35px; } .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; } .photo-card img { height:195px; } .service-grid { grid-template-columns:1fr; } .service-image { height:280px; box-shadow:10px 10px 0 #e9dfcd; } .service-copy { text-align:center; } .mini-points { justify-content:center; } .contact-details span { margin:4px 8px; } .floating-wa { right:12px; bottom:12px; padding:10px 13px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*:before,*:after { animation:none!important; transition:none!important; } .reveal { opacity:1; transform:none; } }
+
+    /* Revisi: hero identitas merek, tanpa foto berulang dan tanpa label lama */
+    .hero-media:before { inset:18px -15px -16px 18px; border-radius:190px 190px 5px 5px; }
+    .brand-art { position:relative; display:grid; place-items:center; min-height:440px; padding:35px; border-radius:190px 190px 5px 5px; background:radial-gradient(circle at 50% 32%,#fffdf8 0%,#f4ead9 75%,#e9d9bc 100%); border:1px solid #e8d7b8; box-shadow:0 16px 50px #3d2e1813; overflow:hidden; }
+    .brand-art:before { content:""; position:absolute; inset:22px; border:1px solid #cbb18488; border-radius:165px 165px 3px 3px; }
+    .brand-art-inner { position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; color:var(--gold-deep); }
+    .brand-art-top { font-size:10px; letter-spacing:3px; margin-bottom:30px; }
+    .brand-art-name { font:400 clamp(49px,6vw,83px)/1 Georgia,serif; letter-spacing:7px; color:#a17e46; }
+    .brand-art-sub { font-size:14px; letter-spacing:8px; margin:16px 0 32px; }
+    .brand-art-rule { width:66px; height:1px; background:#c9a76d; margin-bottom:24px; }
+    .brand-art-bottom { font-size:9px; letter-spacing:2.2px; }
+    /* Galeri lebih mungil dan foto utuh, tidak terpotong */
+    .gallery { grid-template-columns:repeat(5,minmax(0,1fr)); gap:13px; }
+    .photo-card { border:1px solid var(--line); background:#f8f5ef; border-radius:7px; }
+    .photo-card img { height:172px; object-fit:contain; padding:7px; }
+    .photo-card:hover img,.photo-card:focus-visible img { transform:scale(1.035); }
+    .service-grid { grid-template-columns:.9fr 1.1fr; }
+    .service-art { min-height:325px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:35px 20px; border:1px solid #dfcba9; background:linear-gradient(145deg,#fdfaf4,#eee2ce); box-shadow:13px 13px 0 #e9dfcd; }
+    .service-art-kicker { font-size:10px; letter-spacing:3px; color:var(--gold-deep); }
+    .service-art-main { margin:26px 0; font:clamp(34px,4vw,53px)/1.2 Georgia,serif; }
+    .service-art-main em { color:var(--gold-deep); font-weight:400; }
+    .service-art-line { width:64px; height:1px; background:var(--gold); }
+    .service-art-foot { margin-top:24px; color:var(--muted); font-size:10px; letter-spacing:2px; }
+    @media(max-width:900px) { .gallery { grid-template-columns:repeat(4,minmax(0,1fr)); } .photo-card img { height:155px; } .brand-art { min-height:370px; } }
+    @media(max-width:650px) { .brand-art { min-height:320px; } .brand-art-name { font-size:57px; } .gallery { grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; } .photo-card img { height:135px; padding:4px; } .service-grid { grid-template-columns:1fr; } .service-art { min-height:270px; box-shadow:9px 9px 0 #e9dfcd; } }
+    @media(max-width:390px) { .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); } }
   </style>
 </head>
 <body>
@@ -97,31 +122,32 @@
   <main>
     <div class="hero" id="home"><div class="container hero-inner">
       <div class="hero-copy reveal"><span class="eyebrow">Welcome to Buana Gold Shop</span><h1>Timeless Beauty,<br>Precious Elegance.</h1><p>Setiap perhiasan memiliki cerita dan nilainya sendiri. Buana Gold Shop melayani konsultasi jual beli perhiasan dengan komunikasi yang mudah dan personal.</p><div class="actions"><a class="btn" href="#dokumentasi">LIHAT DOKUMENTASI</a><a class="btn btn-outline" href="#layanan">JUAL PERHIASAN</a></div></div>
-      <div class="hero-media reveal"><img class="hero-photo" src="assets/images/perhiasan_01.jpg" alt="Dokumentasi perhiasan yang diperiksa di Buana Gold Shop" fetchpriority="high"><div class="hero-caption">DOKUMENTASI PERHIASAN · BUANA GOLD SHOP</div></div>
+      <div class="hero-media reveal" aria-label="Identitas Buana Gold Shop"><div class="brand-art"><div class="brand-art-inner"><span class="brand-art-top">EST. BUANA GOLD SHOP</span><span class="brand-art-name">BUANA</span><span class="brand-art-sub">GOLD SHOP</span><span class="brand-art-rule"></span><span class="brand-art-bottom">JEWELRY &amp; PRECIOUS MOMENTS</span></div></div></div>
     </div></div>
     <section id="jenis"><div class="container"><div class="section-heading reveal"><span class="eyebrow">What We Welcome</span><h2>Beragam Perhiasan, Beragam Cerita</h2><p>Konsultasikan perhiasan yang ingin Anda tawarkan kepada kami. Setiap penawaran dapat dibicarakan langsung melalui WhatsApp.</p></div>
       <div class="intro-grid"><div class="feature reveal"><span class="feature-num">01</span><h3>Emas & Perak</h3><p>Berbagai bentuk perhiasan, termasuk cincin, gelang, kalung, dan model lainnya.</p></div><div class="feature reveal"><span class="feature-num">02</span><h3>Berlian & Batu Permata</h3><p>Konsultasi mengenai perhiasan dengan batu hias atau batu permata.</p></div><div class="feature reveal"><span class="feature-num">03</span><h3>Konsultasi Langsung</h3><p>Hubungi kami untuk membicarakan jenis, kondisi, dan informasi perhiasan Anda.</p></div></div>
     </div></section>
     <section class="gallery-section" id="dokumentasi"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Our Documentation</span><h2>Dokumentasi Perhiasan</h2><p>Beberapa foto asli perhiasan sebagai gambaran beragam model yang dapat dikonsultasikan kepada Buana Gold Shop.</p></div>
       <div class="gallery" id="gallery">
-        <button class="photo-card reveal" type="button" data-index="0" aria-label="Perbesar dokumentasi perhiasan 1"><img src="assets/images/perhiasan_02.jpg" alt="Dokumentasi perhiasan 1" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="1" aria-label="Perbesar dokumentasi perhiasan 2"><img src="assets/images/perhiasan_03.jpg" alt="Dokumentasi perhiasan 2" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="2" aria-label="Perbesar dokumentasi perhiasan 3"><img src="assets/images/perhiasan_04.jpg" alt="Dokumentasi perhiasan 3" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="3" aria-label="Perbesar dokumentasi perhiasan 4"><img src="assets/images/perhiasan_05.jpg" alt="Dokumentasi perhiasan 4" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="4" aria-label="Perbesar dokumentasi perhiasan 5"><img src="assets/images/perhiasan_06.jpg" alt="Dokumentasi perhiasan 5" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="5" aria-label="Perbesar dokumentasi perhiasan 6"><img src="assets/images/perhiasan_07.jpg" alt="Dokumentasi perhiasan 6" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="6" aria-label="Perbesar dokumentasi perhiasan 7"><img src="assets/images/perhiasan_08.jpg" alt="Dokumentasi perhiasan 7" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="7" aria-label="Perbesar dokumentasi perhiasan 8"><img src="assets/images/perhiasan_09.jpg" alt="Dokumentasi perhiasan 8" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="8" aria-label="Perbesar dokumentasi perhiasan 9"><img src="assets/images/perhiasan_10.jpg" alt="Dokumentasi perhiasan 9" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="9" aria-label="Perbesar dokumentasi perhiasan 10"><img src="assets/images/perhiasan_11.jpg" alt="Dokumentasi perhiasan 10" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="10" aria-label="Perbesar dokumentasi perhiasan 11"><img src="assets/images/perhiasan_12.jpg" alt="Dokumentasi perhiasan 11" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="11" aria-label="Perbesar dokumentasi perhiasan 12"><img src="assets/images/perhiasan_13.jpg" alt="Dokumentasi perhiasan 12" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="12" aria-label="Perbesar dokumentasi perhiasan 13"><img src="assets/images/perhiasan_14.jpg" alt="Dokumentasi perhiasan 13" loading="lazy"></button>
-        <button class="photo-card reveal" type="button" data-index="13" aria-label="Perbesar dokumentasi perhiasan 14"><img src="assets/images/perhiasan_15.jpg" alt="Dokumentasi perhiasan 14" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="0" aria-label="Perbesar dokumentasi perhiasan 1"><img src="assets/images/perhiasan_01.jpg" alt="Dokumentasi perhiasan 1 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="1" aria-label="Perbesar dokumentasi perhiasan 2"><img src="assets/images/perhiasan_02.jpg" alt="Dokumentasi perhiasan 2 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="2" aria-label="Perbesar dokumentasi perhiasan 3"><img src="assets/images/perhiasan_03.jpg" alt="Dokumentasi perhiasan 3 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="3" aria-label="Perbesar dokumentasi perhiasan 4"><img src="assets/images/perhiasan_04.jpg" alt="Dokumentasi perhiasan 4 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="4" aria-label="Perbesar dokumentasi perhiasan 5"><img src="assets/images/perhiasan_05.jpg" alt="Dokumentasi perhiasan 5 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="5" aria-label="Perbesar dokumentasi perhiasan 6"><img src="assets/images/perhiasan_06.jpg" alt="Dokumentasi perhiasan 6 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="6" aria-label="Perbesar dokumentasi perhiasan 7"><img src="assets/images/perhiasan_07.jpg" alt="Dokumentasi perhiasan 7 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="7" aria-label="Perbesar dokumentasi perhiasan 8"><img src="assets/images/perhiasan_08.jpg" alt="Dokumentasi perhiasan 8 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="8" aria-label="Perbesar dokumentasi perhiasan 9"><img src="assets/images/perhiasan_09.jpg" alt="Dokumentasi perhiasan 9 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="9" aria-label="Perbesar dokumentasi perhiasan 10"><img src="assets/images/perhiasan_10.jpg" alt="Dokumentasi perhiasan 10 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="10" aria-label="Perbesar dokumentasi perhiasan 11"><img src="assets/images/perhiasan_11.jpg" alt="Dokumentasi perhiasan 11 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="11" aria-label="Perbesar dokumentasi perhiasan 12"><img src="assets/images/perhiasan_12.jpg" alt="Dokumentasi perhiasan 12 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="12" aria-label="Perbesar dokumentasi perhiasan 13"><img src="assets/images/perhiasan_13.jpg" alt="Dokumentasi perhiasan 13 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="13" aria-label="Perbesar dokumentasi perhiasan 14"><img src="assets/images/perhiasan_14.jpg" alt="Dokumentasi perhiasan 14 Buana Gold Shop" loading="lazy"></button>
+        <button class="photo-card reveal" type="button" data-index="14" aria-label="Perbesar dokumentasi perhiasan 15"><img src="assets/images/perhiasan_15.jpg" alt="Dokumentasi perhiasan 15 Buana Gold Shop" loading="lazy"></button>
       </div>
       <p class="gallery-note">Foto-foto di atas merupakan dokumentasi, bukan katalog stok yang tersedia untuk dijual. Katalog produk penjualan akan ditampilkan secara terpisah. Jenis dan kondisi perhiasan dapat dikonsultasikan langsung.</p>
     </div></section>
-    <section class="services" id="layanan"><div class="container service-grid"><img class="service-image reveal" src="assets/images/perhiasan_01.jpg" alt="Foto perhiasan di atas timbangan sebagai dokumentasi pemeriksaan" loading="lazy"><div class="service-copy reveal"><span class="eyebrow">Sell Your Jewelry</span><h2>Ingin Menjual Perhiasan Anda?</h2><p>Punya perhiasan lama atau model yang sudah tidak digunakan? Buana Gold Shop menerima pertanyaan dan penawaran penjualan berbagai model perhiasan. Kirimkan informasi dan foto perhiasan Anda untuk konsultasi awal.</p><div class="mini-points"><span>Perhiasan Lama</span><span>Beragam Model</span><span>Konsultasi via WhatsApp</span></div><a class="btn" href="https://wa.me/6287741854691?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20menawarkan%20perhiasan%20untuk%20dijual." target="_blank" rel="noopener noreferrer">TAWARKAN PERHIASAN</a></div></div></section>
+    <section class="services" id="layanan"><div class="container service-grid"><div class="service-art reveal" aria-hidden="true"><span class="service-art-kicker">BUANA GOLD SHOP</span><span class="service-art-main">Your Jewelry,<br><em>Our Care.</em></span><span class="service-art-line"></span><span class="service-art-foot">KONSULTASI JUAL PERHIASAN</span></div><div class="service-copy reveal"><span class="eyebrow">Sell Your Jewelry</span><h2>Ingin Menjual Perhiasan Anda?</h2><p>Punya perhiasan lama atau model yang sudah tidak digunakan? Buana Gold Shop menerima pertanyaan dan penawaran penjualan berbagai model perhiasan. Kirimkan informasi dan foto perhiasan Anda untuk konsultasi awal.</p><div class="mini-points"><span>Perhiasan Lama</span><span>Beragam Model</span><span>Konsultasi via WhatsApp</span></div><a class="btn" href="https://wa.me/6287741854691?text=Halo%20Buana%20Gold%20Shop%2C%20saya%20ingin%20menawarkan%20perhiasan%20untuk%20dijual." target="_blank" rel="noopener noreferrer">TAWARKAN PERHIASAN</a></div></div></section>
     <section class="about" id="tentang"><div class="container about-copy reveal"><span class="eyebrow">About Us</span><h2>Tentang Buana Gold Shop</h2><p>Buana Gold Shop menyediakan layanan komunikasi dan konsultasi jual beli perhiasan emas, perak, berlian, serta batu permata. Kami ingin menghadirkan pengalaman yang sederhana, nyaman, dan personal bagi setiap pelanggan. Informasi produk yang dijual akan tersedia melalui katalog terpisah.</p></div></section>
     <section class="contact" id="kontak"><div class="container contact-copy reveal"><span class="eyebrow">Get In Touch</span><h2>Mari Terhubung</h2><p>Ingin bertanya tentang layanan, menawarkan perhiasan, atau mengetahui informasi lebih lanjut? Hubungi kontak resmi Buana Gold Shop.</p><div class="actions"><a class="btn" href="https://wa.me/6287741854691" target="_blank" rel="noopener noreferrer">WHATSAPP</a><a class="btn btn-outline" href="https://www.instagram.com/buanagoldshop/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a></div><div class="contact-details"><span>WhatsApp: 087741854691</span><span>Instagram: @buanagoldshop</span></div></div></section>
   </main>
