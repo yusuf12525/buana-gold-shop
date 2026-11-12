@@ -173,6 +173,27 @@
       lightbox.addEventListener('click',function(e) { if(e.target===lightbox) closeLightbox(); });
       document.addEventListener('keydown',function(e) { if(!lightbox.classList.contains('open')) return; if(e.key==='Escape') closeLightbox(); if(e.key==='Tab') { e.preventDefault(); closeButton.focus(); } });
     })();
-  </script>
+      </script>
+      <!-- =========================================
+       PESAN AWAL WHATSAPP BUANA GOLD SHOP
+    ========================================= -->
+      <script>
+      // Nomor WhatsApp toko
+      const nomorToko = "6287741854691";
+    
+      // Pesan otomatis yang disiapkan untuk pelanggan
+      const pesanAwal =
+        "Halo Buana Gold Shop, saya ingin bertanya mengenai layanan jual beli perhiasan.";
+    
+      // Mengatur tombol WhatsApp umum
+      document.querySelectorAll('a[href="https://wa.me/6287741854691"]')
+        .forEach(function(link) {
+          link.href =
+            "https://wa.me/" +
+            nomorToko +
+            "?text=" +
+            encodeURIComponent(pesanAwal);
+        });
+      </script>
 </body>
 </html>
